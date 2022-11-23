@@ -80,6 +80,18 @@ public class BookConsumerController {
         log.info("book to be inserted is : {}",book);
         return bookConsumer.insertBook(book);
     }
+
+    @DeleteMapping("/consumerRemoveBookJDBC/{id}")
+    public void removeBookJDBC(@PathVariable Integer id){
+        log.info("BookConsumerController.removeBookJDBC() method is called...");
+        bookConsumer.removeBookJDBC(id);
+    }
+
+    @PutMapping("/consumerUpdateBookJdbc")
+    public void updatedBook(@RequestBody BookJDBC book){
+        log.info("BookConsumerController.updatedBook() method is called...");
+        bookConsumer.updatedBook(book);
+    }
 }
 
 

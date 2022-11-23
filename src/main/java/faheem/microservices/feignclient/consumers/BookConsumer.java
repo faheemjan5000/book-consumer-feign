@@ -44,4 +44,9 @@ public interface BookConsumer {
     @PostMapping("/insertBookJDBC")
     public BookJDBC insertBook(@RequestBody BookJDBC book);
 
+    @DeleteMapping("/removeBookJDBC/{id}")
+    public void removeBookJDBC(@PathVariable Integer id);
+
+    @PutMapping("/updateBookJdbc")
+    public void updatedBook(@RequestBody BookJDBC book);
 }
